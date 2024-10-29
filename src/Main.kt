@@ -1,14 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    val array = arrayOf(
+        intArrayOf(5, 9, 6, 7, 2),
+        intArrayOf(9, 8, 4, 5, 3),
+        intArrayOf(6, 4, 3, 8, 7),
+        intArrayOf(7, 5, 8, 4, 8),
+        intArrayOf(2, 3, 7, 8, 1)
+    )
+
+    val n = array.size
+    var isSymmetric = true
+
+
+    for (i in 0..<n) {
+        for (j in 0..<n) {
+            if (array[i][j] != array[j][i]) {
+                isSymmetric = false
+                break
+            }
+        }
+        if (!isSymmetric) break
+    }
+
+
+    if (isSymmetric) {
+        println("Массив является симметричным относительно главной диагонали")
+    } else {
+        println("Массив не является симметричным относительно главной диагонали")
     }
 }
